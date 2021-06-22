@@ -2,6 +2,8 @@ import pool from '../lib/utils/pool.js';
 import setup from '../data/setup.js';
 import request from 'supertest';
 import app from '../lib/app.js';
+import Coffee from '../lib/models/Coffee.js';
+
 
 describe('demo routes', () => {
   beforeEach(() => {
@@ -10,7 +12,7 @@ describe('demo routes', () => {
 
   it('creates a cup of coffee via POST', async () => {
     const res = await request(app)
-      .post('api/v1/coffees')
+      .post('/api/v1/coffees')
       .send({
         quantity: 1
       });

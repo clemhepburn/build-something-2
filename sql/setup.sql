@@ -1,0 +1,6 @@
+DROP TABLE IF EXISTS coffees;
+
+CREATE TABLE coffees (
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  quantity INTEGER CHECK (quantity > 0)
+);
